@@ -1,16 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { User } from '../shared/models/user';
+import { UserService } from '../shared/services/user.service';
 
-export class User {
-    id: number;
-    name: string;
-    username: string;
-    avatar: string;
-}
-const users : User[] = [
-    {id:1,name:'Danilo',username:'danilodelfio', avatar:'https://pbs.twimg.com/profile_images/739164110462550016/DYUAlA14.jpg'},
-    {id:1,name:'Digital Trends',username:'DigitalTrends', avatar:'https://pbs.twimg.com/profile_images/773261989539786753/HrKN3Sir.jpg'},
-    {id:1,name:'Quote',username:'quotecanleadyou', avatar:'https://pbs.twimg.com/profile_images/461811277875007490/aKuN_jbW.jpeg'}
-]
 
 @Component ({
     selector:'about-page',
@@ -38,6 +29,12 @@ const users : User[] = [
         </div>
     `
 })
-export class AboutComponent {
-    users : User[] = users;
+export class AboutComponent implements OnInit {
+    users : User[] ;
+
+    constructor(private service: UserService) {}
+
+    ngOnInit() {
+        this.service.getUsers().then(users => this.users = users);
+    }
 }

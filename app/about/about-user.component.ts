@@ -1,17 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { User } from '../shared/models/user';
+import { UserService } from '../shared/services/user.service';
 
-export class User {
-    id: number;
-    name: string;
-    username: string;
-    avatar: string;
-}
-const users : User[] = [
-    {id:1,name:'Danilo',username:'danilodelfio', avatar:'https://pbs.twimg.com/profile_images/739164110462550016/DYUAlA14.jpg'},
-    {id:1,name:'Digital Trends',username:'DigitalTrends', avatar:'https://pbs.twimg.com/profile_images/773261989539786753/HrKN3Sir.jpg'},
-    {id:1,name:'Quote',username:'quotecanleadyou', avatar:'https://pbs.twimg.com/profile_images/461811277875007490/aKuN_jbW.jpeg'}
-]
 
 @Component ({
     styles : [`
@@ -21,23 +12,28 @@ const users : User[] = [
         }
     `],
     template : `
+        <a (click)="goBack()" class="btn btn-sm btn-info">Go Back</a>
         <div class="jumbotron text-center" *ngIf="user">
-            <h1>{{user.name}} {{user.username}}</h1>
+            <h1>{{user.name}} ({{user.username}})</h1>
 
             <img [src]="user.avatar" class="img-responsive img-circle">
         </div>
     `
 })
 export class AboutUserComponent implements OnInit {
-    user;
-    constructor(private route: ActivatedRoute) {
-
-    }
+    user: User;
+    constructor(
+        private route: ActivatedRoute, 
+        private service: UserService,
+        private router: Router
+        ) {}
 
     ngOnInit() {
         let username = this.route.snapshot.params['username'];
-        this.user = users.find( function ( user ){
-            return user.username === username;
-        });
+        this.service.getUser(username).then( user => this.user = user);
+    }
+
+    goBack() {
+        this.router.navigate(['/about']);
     }
 }
