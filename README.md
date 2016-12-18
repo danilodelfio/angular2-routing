@@ -1,10 +1,10 @@
-# Angular 2 Starter
+# Angular 2 Routing
 
-The simplest starter kit you can find. Not trying to overcomplicate things, just get up and running with Angular 2. 
+This project is for having a starting point for AngularJS 2 and Typescript and with the routing system 
+in a simple way. 
+Takes a lot of cues from the Angular [quickstart](https://angular.io/docs/ts/latest/quickstart.html).
 
-All the essentials. None of the extras. Takes a lot of cues from the Angular [quickstart](https://angular.io/docs/ts/latest/quickstart.html).
-
-> This is a great starter for getting straight to the Angular 2 and not dealing with any of the setup.
+> This is a great starter for getting straight to the Angular 2 ant routing system
 
 ## About
 
