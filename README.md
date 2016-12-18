@@ -4,7 +4,7 @@ This project is for having a starting point for AngularJS 2 and Typescript and w
 in a simple way. 
 Takes a lot of cues from the Angular [quickstart](https://angular.io/docs/ts/latest/quickstart.html).
 
-> This is a great starter for getting straight to the Angular 2 ant routing system
+> This is a great starter for getting straight to the Angular 2 and its routing system
 
 ## About
 
