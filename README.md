@@ -2,16 +2,18 @@
 
 This project is for having a starting point for AngularJS 2 and Typescript and with the routing system 
 in a simple way. 
+
 Takes a lot of cues from the Angular [quickstart](https://angular.io/docs/ts/latest/quickstart.html).
 
 > This is a great starter for getting straight to the Angular 2 and its routing system
 
-## About
+## Router Features
 
-- **Transpiling ES6**: TypeScript compiled via npm script
-    + Compiled from the `app/` folder to the `dist/` folder
-- **Loading Imports**: SystemJS is the loader 
-- **Serving**: [lite-server](https://github.com/johnpapa/lite-server) serves our dev server
+- **Route to different pages**: Base routing system for routing through pages
+- **Route with parameters**: Passing parameter from different Components 
+- **Child Routes**: Routes through sub-menu
+- **Lazy Loading**: Load resources when we visit the page (we want to load them incrementally)
+- **Handle things (auth) before/after routes**: Allow users to navigate to page or to not to leave page if they haven't yet finished to work on it (example: update user profile)
 
 ## Requirements
 
@@ -19,8 +21,8 @@ Takes a lot of cues from the Angular [quickstart](https://angular.io/docs/ts/lat
 
 ## Installation
 
-- Clone the repo: `git clone git@github.com:scotch-io/angular2-starter-basic`
-- Choose the new directory: `cd angular2-starter-basic`
+- Clone the repo: `git clone git@github.com:danilodelfio/angular2-routing`
+- Choose the new directory: `cd angular2-routing`
 - Install dependencies: `npm install`
 - Start the app: `npm start`
 - View the app: <http://localhost:3000>
