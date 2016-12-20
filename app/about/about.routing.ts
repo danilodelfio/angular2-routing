@@ -3,15 +3,19 @@ import { Routes, RouterModule} from '@angular/router';
 import { AboutComponent } from './about.component';
 import { AboutUserComponent } from './about-user.component';
 import { AboutSectionComponent } from './about-section.component';
+import { AboutUserResolve } from './about-resolve.service';
 
 const aboutRoutes: Routes = [
      { 
          path:'',
-         component : AboutSectionComponent;
+         component : AboutSectionComponent,
          children : [
              { 
                 path:'',
-                component: AboutComponent
+                component: AboutComponent,
+                resolve : {                                 // the router will grab all the information
+                    users : AboutUserResolve    // from the resolve and then it routes  to
+                }                                               // this route.
             },
             {
                 path: ':username',
