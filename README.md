@@ -13,6 +13,7 @@ Takes a lot of cues from the Angular [quickstart](https://angular.io/docs/ts/lat
 - **Route with parameters**: Passing parameter from different Components 
 - **Child Routes**: Routes through sub-menu
 - **Lazy Loading**: Load resources when we visit the page (we want to load them incrementally)
+- **Resolve**: We can call some service into resolve attribute of routing system for not to show blank page until data is available and for kick back user to another view if it's not possible to resolve data. 
 - **Handle things (auth) before/after routes**: Allow users to navigate to page or to not to leave page if they haven't yet finished to work on it (example: update user profile)
 
 ## Requirements

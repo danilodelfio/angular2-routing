@@ -6,7 +6,7 @@ import { UserService } from '../shared/services/user.service';
 // This resolve service permit us to nt show blank page until data is loaded from http service
 
 @Injectable()
-export class AboutUserResolve implements Resolve<User> {
+export class AboutUsersResolve implements Resolve<User> {
 
     constructor(private service: UserService) {};
 

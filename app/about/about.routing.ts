@@ -3,7 +3,8 @@ import { Routes, RouterModule} from '@angular/router';
 import { AboutComponent } from './about.component';
 import { AboutUserComponent } from './about-user.component';
 import { AboutSectionComponent } from './about-section.component';
-import { AboutUserResolve } from './about-resolve.service';
+import { AboutUsersResolve } from './about-resolve.service';
+import { AboutUserResolve } from './about-user-resolve.service';
 
 const aboutRoutes: Routes = [
      { 
@@ -14,12 +15,15 @@ const aboutRoutes: Routes = [
                 path:'',
                 component: AboutComponent,
                 resolve : {                                 // the router will grab all the information
-                    users : AboutUserResolve    // from the resolve and then it routes  to
+                    users : AboutUsersResolve    // from the resolve and then it routes  to
                 }                                               // this route.
             },
             {
                 path: ':username',
-                component : AboutUserComponent
+                component : AboutUserComponent,
+                resolve : {
+                    user: AboutUserResolve
+                }
             }
          ]
      }
